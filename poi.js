@@ -6,6 +6,12 @@ const prefix = process.env.BOT_PREFIX;
 const lang = require('./' + process.env.BOT_LANG + '.json');
 const db = require('./db_access.js');
 
+const testPromise = new Promise(
+    (res, rej) => {
+        setTimeout(res, 5000);
+});
+
+
 client.on("ready", () => {
     console.log(lang.system.ready);
 });
@@ -47,6 +53,12 @@ client.on("message", (message) => {
                     }
                 });
                 break;
+            case 'PromiseTest':
+            case '時間測試':
+                testPromise.then( () => {
+                    message.channel.send(util.format(lang.response.time));
+                }
+                    
             default:
                 message.channel.send(lang.response.default);
         }

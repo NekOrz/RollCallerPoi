@@ -5,6 +5,7 @@
     "response": {
         "hello": "%s 你好! Poi!",
         "default": "Poi!!",
+        "time": "五秒經過...",
         "dberror": "和資料庫的連線失敗了 poi...",
         "successfulJoin": "%s 成功加入了 %s poi!",
         "successfulLeave": "%s 離開了 %s poi。"
